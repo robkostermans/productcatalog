@@ -1,0 +1,9 @@
+{
+  "files": {
+    "main.js": "/productcatalog/static/js/main.87041da7.js",
+    "main.js.map": "/productcatalog/static/js/main.87041da7.js.map",
+    "index.html": "/productcatalog/index.html",
+    "precache-manifest.04c29336f413e082c91f4fedf06e6e57.js": "/productcatalog/precache-manifest.04c29336f413e082c91f4fedf06e6e57.js",
+    "service-worker.js": "/productcatalog/service-worker.js"
+  }
+}

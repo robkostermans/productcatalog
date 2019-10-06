@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { SettingsContextProvider } from '../context';
-import { Widget, Button } from './';
+import { Widget } from './';
 
 import theme from './themes/default';
 import { CallValidateApiKey, CallGetChannelSettings } from '../helpers';
@@ -34,14 +34,14 @@ const App = ({ config }) => {
 			await setSettings(allConfigSettings);
 		};
 		fetchConfig();
-	}, []);
+	});
 
 	return (
 		<React.Fragment>
 			<SettingsContextProvider value={settings}>
 				<ThemeProvider theme={theme}>
 					<GlobalStyle />
-					<Button>click me</Button>
+
 					<React.Fragment>
 						{settings.apiKeyIsValid === null && <div>Loading...</div>}
 						{settings.apiKeyIsValid === true && <Widget>He hallo</Widget>}

@@ -32,7 +32,7 @@ const Widget = props => {
 		setActivity(['1']);
 	};
 
-	nextActivitity();
+	//nextActivitity();
 	return (
 		<Widget>
 			<Wrapper>

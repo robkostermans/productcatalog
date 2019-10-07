@@ -1,6 +1,8 @@
 const req = require.context('.', true, /\.\/[^/]+\/index\.js$/);
 
 req.keys().forEach(key => {
-	const componentName = key.replace(/^.+\/([^/]+)\/index\.js/, '$1');
-	module.exports[componentName] = req(key).default;
+	var exportedFunctions = Object.keys(req(key));
+	exportedFunctions.forEach(exportedFunction => {
+		module.exports[exportedFunction] = req(key)[exportedFunction];
+	});
 });

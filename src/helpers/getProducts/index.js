@@ -1,15 +1,12 @@
 import axios from 'axios';
 
-async function CallValidateApiKey(Settings) {
+export async function getProducts(Settings) {
 	const result = await axios({
-		method: 'POST',
-		url: process.env.REACT_APP_API + '/ValidateApiKey',
+		method: 'GET',
+		url: process.env.REACT_APP_API + '/catalog.json',
 		headers: {
 			Accept: '*/*',
 			'Content-Type': 'application/json'
-		},
-		data: {
-			ApiKey: Settings.ApiKey
 		}
 	}).catch(error => {
 		console.log(error);
@@ -17,7 +14,6 @@ async function CallValidateApiKey(Settings) {
 	});
 
 	return result.data || false;
-	//setData(result.data);
 }
 
-export default CallValidateApiKey;
+//export default getProducts;

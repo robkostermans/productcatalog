@@ -7,8 +7,9 @@ import { useStateContext } from '../../state';
 
 const S = {};
 S.Catalog = styled.ul`
-	background: ${props => props.theme.colors.primary};
+	list-style: none;
 	margin: 0;
+	padding: 1rem;
 `;
 
 const Catalog = props => {

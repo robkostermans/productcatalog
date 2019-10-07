@@ -32,19 +32,14 @@ export const loadFavoritesFromStorage = (state, action) => {
 	};
 };
 
-// export const removeFavorite = (state, action) => {
-// 	return {
-// 		...state,
-// 		favorites: [...state.favorites, action.product]
-// 	};
-// };
-
-// export const isFavorite = (state, action) => {
-// 	return {
-// 		...state,
-// 		favorites: [...state.favorites, action.product]
-// 	};
-// };
+export const removeFavorite = (state, action) => {
+	const newFavorites = state.favorites.filter(f => f.productID !== action.product.id);
+	updateLocalStorage(newFavorites);
+	return {
+		...state,
+		favorites: newFavorites
+	};
+};
 
 const updateLocalStorage = favorites => {
 	localStorage.setItem('ProductCatalog-Favorites', JSON.stringify(favorites));

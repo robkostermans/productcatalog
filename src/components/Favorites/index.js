@@ -7,8 +7,8 @@ import { Favorite } from '..';
 
 const S = {};
 S.Wishlist = styled.ul`
-	background: ${props => props.theme.colors.primary};
-	margin: 0;
+	/* background: ${props => props.theme.colors.primary};
+	margin: 0; */
 `;
 
 const Favorites = props => {

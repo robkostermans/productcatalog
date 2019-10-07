@@ -6,10 +6,10 @@ import { useStateContext } from '../../state';
 const S = {};
 
 S.Favorite = styled.li`
-	background: ${props => props.theme.colors.primary};
+	/* background: ${props => props.theme.colors.primary};
 	color: #fff;
 	border: 0;
-	padding: 7px 10px;
+	padding: 7px 10px; */
 `;
 
 S.Favorite.defaultProps = {

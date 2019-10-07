@@ -1,18 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
-import { WhishListButton } from '../';
+import { FavoritesButton } from '../';
 
 const S = {};
 
-S.Header = styled.header`
-	background: ${props => props.theme.colors.primary};
-	color: #fff;
-	border: 0;
-	padding: 7px 10px;
+S.Header = styled.header``;
+
+S.Title = styled.h1`
+	color: ${props => props.theme.colors.primary};
+	font-family: 'Kaushan Script', cursive;
+	font-size: 3rem;
+	margin: 1rem;
+	line-height: 1;
 `;
-S.Wrapper = styled.div`
-	max-width: 800px;
-	margin: auto;
+S.SubTitle = styled.h2`
+	color: ${props => props.theme.colors.primary};
+	display: block;
+	font-family: 'Kaushan Script', cursive;
+	font-size: 1.25rem;
+	margin: 1rem;
+	line-height: 1;
 `;
 
 //SET DEDaAULTS
@@ -29,10 +36,8 @@ const Header = props => {
 
 	return (
 		<S.Header>
-			<S.Wrapper>
-				Header
-				<WhishListButton />
-			</S.Wrapper>
+			<S.Title>Robot Shop</S.Title>
+			<S.SubTitle>Get your robot now ... just in case!</S.SubTitle>
 		</S.Header>
 	);
 };

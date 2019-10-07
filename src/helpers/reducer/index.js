@@ -1,9 +1,11 @@
-import { addFavorite, loadFavoritesFromStorage } from '../';
+import { addFavorite, removeFavorite, loadFavoritesFromStorage } from '../';
 
 export const reducer = (state, action) => {
 	switch (action.type) {
 		case 'addFavorite':
 			return addFavorite(state, action);
+		case 'removeFavorite':
+			return removeFavorite(state, action);
 		case 'loadProducts':
 			return {
 				...state,

@@ -1,4 +1,4 @@
-import { addFavorite } from '../';
+import { addFavorite, loadFavoritesFromStorage } from '../';
 
 export const reducer = (state, action) => {
 	switch (action.type) {
@@ -9,6 +9,8 @@ export const reducer = (state, action) => {
 				...state,
 				products: action.products
 			};
+		case 'loadFavoritesFromStorage':
+			return loadFavoritesFromStorage(state, action);
 		default:
 			return state;
 	}

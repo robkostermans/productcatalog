@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
 import { useStateContext } from '../../state';
-
+import { getProducts } from '../../helpers';
 import { Favorite } from '..';
 
 const S = {};
@@ -12,7 +12,12 @@ S.Wishlist = styled.ul`
 `;
 
 const Favorites = props => {
-	const [{ favorites }] = useStateContext();
+	const [{ favorites }, dispatch] = useStateContext();
+
+	useEffect(() => {
+		dispatch({ type: 'loadFavoritesFromStorage' });
+	}, [dispatch]);
+
 	return (
 		<S.Wishlist>
 			{favorites.map((favorite, index) => (
@@ -21,9 +26,5 @@ const Favorites = props => {
 		</S.Wishlist>
 	);
 };
-
-// Favorites.defaultProps = {
-// 	wishlist: []
-// };
 
 export default Favorites;

@@ -1,0 +1,182 @@
+[
+	{
+		"id": "001",
+		"title": "T-800",
+		"year": "1984",
+		"image": "t800.png"
+	},
+	{
+		"id": "002",
+		"title": "Astroboy",
+		"year": "1952",
+		"image": "astroboy.png"
+	},
+	{
+		"id": "003",
+		"title": "Vision",
+		"year": "1940",
+		"image": "vision.png"
+	},
+	{
+		"id": "004",
+		"title": "Bender",
+		"year": "1999",
+		"image": "bender.png"
+	},
+	{
+		"id": "005",
+		"title": "Brianiac",
+		"year": "1958",
+		"image": "brainiac.png"
+	},
+	{
+		"id": "006",
+		"title": "C3P0",
+		"year": "1977",
+		"image": "c3p0.png"
+	},
+	{
+		"id": "007",
+		"title": "Clank",
+		"year": "2002",
+		"image": "clank.png"
+	},
+	{
+		"id": "008",
+		"title": "Cyberman",
+		"year": "1966",
+		"image": "cyberman.png"
+	},
+	{
+		"id": "009",
+		"title": "Cylon",
+		"year": "1978",
+		"image": "cylon.png"
+	},
+	{
+		"id": "010",
+		"title": "Awesome-0",
+		"year": "2004",
+		"image": "awesomeo.png"
+	},
+	{
+		"id": "011",
+		"title": "Gort",
+		"year": "1951",
+		"image": "gort.png"
+	},
+	{
+		"id": "012",
+		"title": "Rosie",
+		"year": "1962",
+		"image": "rosie.png"
+	},
+	{
+		"id": "013",
+		"title": "Alpha",
+		"year": "1993",
+		"image": "alpha.png"
+	},
+	{
+		"id": "014",
+		"title": "Voltron",
+		"year": "1984",
+		"image": "voltron.png"
+	},
+	{
+		"id": "015",
+		"title": "Eve",
+		"year": "2008",
+		"image": "eve.png"
+	},
+	{
+		"id": "016",
+		"title": "Maschinenmensch",
+		"year": "1927",
+		"image": "Maschinenmensch.png"
+	},
+	{
+		"id": "017",
+		"title": "Optimus Prime",
+		"year": "1984",
+		"image": "optimus.png"
+	},
+	{
+		"id": "018",
+		"title": "Wall-E",
+		"year": "2008",
+		"image": "walle.png"
+	},
+	{
+		"id": "019",
+		"title": "Wheatley",
+		"year": "2011",
+		"image": "wheatly.png"
+	},
+	{
+		"id": "020",
+		"title": "Marvin",
+		"year": "1978",
+		"image": "marvin.png"
+	},
+	{
+		"id": "021",
+		"title": "Miles Monroe",
+		"year": "1973",
+		"image": "milesmonroe.png"
+	},
+	{
+		"id": "022",
+		"title": "Hal 9000",
+		"year": "1968",
+		"image": "hal9000.png"
+	},
+	{
+		"id": "023",
+		"title": "Iron Giant",
+		"year": "1999",
+		"image": "irongiant.png"
+	},
+	{
+		"id": "024",
+		"title": "Robby The Robot",
+		"year": "1956",
+		"image": "robbytherobot.png"
+	},
+	{
+		"id": "025",
+		"title": "Pneuman",
+		"year": "1999",
+		"image": "pneuman.png"
+	},
+	{
+		"id": "026",
+		"title": "R2D2",
+		"year": "1977",
+		"image": "r2d2.png"
+	},
+	{
+		"id": "027",
+		"title": "Sentinel",
+		"year": "1965",
+		"image": "sentinel.png"
+	},
+	{
+		"id": "028",
+		"title": "Asimo",
+		"year": "2000",
+		"image": "asimo.png"
+	},
+	{
+		"id": "029",
+		"title": "H8",
+		"year": "1963",
+		"image": "h8.png"
+	},
+	{
+		"id": "039",
+		"title": "Mega Man",
+		"year": "1987",
+		"image": "megaman.png"
+	}
+]

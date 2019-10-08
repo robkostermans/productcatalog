@@ -6,17 +6,13 @@ import { useStateContext } from '../../state';
 const S = {};
 
 S.Product = styled.li`
-	//background: ${props => props.theme.colors.primary};
-	//border:1px solid ${props => props.theme.colors.primary};
-	border:1px solid rgb(108, 117, 125);
-	background:#fff;
-	display:inline-block;
-	height:250px;
-	margin-right:1rem;
-	margin-bottom:1rem;
-	position:relative;
-	width:250px;
-
+	background: #fff;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07), 0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07), 0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+	display: inline-block;
+	height: 250px;
+	margin: 0.5rem;
+	position: relative;
+	width: 250px;
 `;
 
 S.Image = styled.img`
@@ -80,7 +76,7 @@ const Product = props => {
 				<S.Title>{props.title}</S.Title> <S.SubTitle>{props.year}</S.SubTitle>
 			</S.Label>
 			<S.Image src={`./data/${props.image}`} />
-			<S.FavoriteButton onClick={() => dispatch({ type: favorites.some(f => f.productID === props.id) ? 'removeFavorite' : 'addFavorite', product: props })}>
+			<S.FavoriteButton onClick={() => dispatch({ type: favorites.some(f => f.productID === props.id) ? 'clearFavorite' : 'addFavorite', product: props })}>
 				<S.Icon x='0px' y='0px' viewBox='0 0 510 510'>
 					<g>
 						{favorites.some(f => f.productID === props.id) ? (

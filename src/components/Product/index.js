@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-
 import { useStateContext } from '../../state';
+import { updateFavorite } from '../../helpers';
 
 const S = {};
 
@@ -58,17 +58,14 @@ S.Icon = styled.svg`
 	width: 25px;
 `;
 
-//SET defaults
-S.Product.defaultProps = {
-	theme: {
-		colors: {
-			primary: 'palevioletred'
-		}
-	}
-};
-
 const Product = props => {
 	const [{ favorites }, dispatch] = useStateContext();
+
+	const handleUpdateFavorites = product => {
+		const actionType = favorites.some(f => f.productID === product.id) ? 'clear' : 'new';
+		const newFavoritesCollection = updateFavorite(favorites, product, actionType);
+		dispatch({ type: 'updateFavorites', favorites: newFavoritesCollection });
+	};
 
 	return (
 		<S.Product>
@@ -76,7 +73,7 @@ const Product = props => {
 				<S.Title>{props.title}</S.Title> <S.SubTitle>{props.year}</S.SubTitle>
 			</S.Label>
 			<S.Image src={`./data/${props.image}`} />
-			<S.FavoriteButton onClick={() => dispatch({ type: favorites.some(f => f.productID === props.id) ? 'clearFavorite' : 'addFavorite', product: props })}>
+			<S.FavoriteButton onClick={() => handleUpdateFavorites(props)}>
 				<S.Icon x='0px' y='0px' viewBox='0 0 510 510'>
 					<g>
 						{favorites.some(f => f.productID === props.id) ? (

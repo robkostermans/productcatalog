@@ -1,9 +1,14 @@
 import axios from 'axios';
 
+/**
+ * get products
+ * @param {&} Settings faux config object not used in this demo
+ * note; using axios is overkill here...
+ */
 export async function getProducts(Settings) {
 	const result = await axios({
 		method: 'GET',
-		url: process.env.REACT_APP_API + '/catalog.json',
+		url: 'data/catalog.json',
 		headers: {
 			Accept: '*/*',
 			'Content-Type': 'application/json'
@@ -15,5 +20,3 @@ export async function getProducts(Settings) {
 
 	return result.data || false;
 }
-
-//export default getProducts;

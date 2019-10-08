@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-
 import { useStateContext } from '../../state';
+import { updateFavorite } from '../../helpers';
 
 const S = {};
 
@@ -41,18 +41,29 @@ S.Counter = styled.div`
 `;
 
 const Favorite = props => {
-	const [{ products }, dispatch] = useStateContext();
-	let product = products.filter(p => p.id === props.productID);
-	product = product.length === 1 ? product[0] : {};
+	const [{ products, favorites }, dispatch] = useStateContext();
+	const [product, setProduct] = useState({});
+
+	useEffect(() => {
+		let product = products.filter(p => p.id === props.productID);
+		product = product.length === 1 ? product[0] : {};
+		setProduct(product);
+	}, []);
+
+	const handleUpdateFavorites = (product, value) => {
+		const actionType = value === -1 ? 'remove' : 'update';
+		const newFavoritesCollection = updateFavorite(favorites, product, actionType);
+		dispatch({ type: 'updateFavorites', favorites: newFavoritesCollection });
+	};
 
 	return (
 		<S.Favorite>
-			<img src={`./data/${product.image}`} />
+			<img src={`./data/${product.image}`} alt='' />
 			<div>{product.title}</div>
 			<div>
-				<S.Button onClick={() => dispatch({ type: 'removeFavorite', product: product })}>-</S.Button>
+				<S.Button onClick={() => handleUpdateFavorites(product, -1)}>-</S.Button>
 				<S.Counter>{props.quantity}</S.Counter>
-				<S.Button onClick={() => dispatch({ type: 'addFavorite', product: product })}>+</S.Button>
+				<S.Button onClick={() => handleUpdateFavorites(product, 1)}>+</S.Button>
 			</div>
 		</S.Favorite>
 	);

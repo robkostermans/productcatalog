@@ -1,3 +1,7 @@
+/**
+ * Barrel loading all helpers autmatically note here that does not get default exports
+ */
+
 const req = require.context('.', true, /\.\/[^/]+\/index\.js$/);
 
 req.keys().forEach(key => {

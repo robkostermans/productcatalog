@@ -33,7 +33,7 @@ S.Badge = styled.div`
 const FavoritesButton = props => {
 	const [{ modal, favorites }, dispatch] = useStateContext();
 
-	// TODO create function
+	// TODO: create function
 	const totalNumberOfFavorites = favorites.reduce(function(accumulator, currentValue) {
 		return accumulator + currentValue.quantity;
 	}, 0);

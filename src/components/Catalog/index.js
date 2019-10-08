@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import { Product } from '../';
-import { getProducts } from '../../helpers';
-
 import { useStateContext } from '../../state';
+import { getProducts } from '../../helpers';
+import { Product } from '../';
 
 const S = {};
 S.Catalog = styled.ul`

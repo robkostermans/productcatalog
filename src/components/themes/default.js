@@ -1,4 +1,6 @@
-// https://github.com/diegohaz/arc/wiki/Styling
+/**
+ * Theming not really used in this project
+ */
 
 const theme = {};
 
@@ -14,16 +16,6 @@ theme.palette = {
 
 theme.colors = {
 	primary: theme.palette.primary[0]
-};
-
-theme.fonts = {
-	primary: 'Helvetica Neue, Helvetica, Roboto, sans-serif',
-	pre: 'Consolas, Liberation Mono, Menlo, Courier, monospace',
-	quote: 'Georgia, serif'
-};
-
-theme.sizes = {
-	maxWidth: '1100px'
 };
 
 export default theme;

@@ -1,71 +1,44 @@
-export const addFavorite = (state, action) => {
-	if (state.favorites.some(item => item.productID === action.product.id)) {
-		// update existing
-		state.favorites.map(d => {
-			if (d.productID === action.product.id) {
-				d.quantity++;
+/**
+ * Update the favorites with new data
+ * @param {array} favorites current favorites
+ * @param {object} product product you whish to update with
+ * @param {string} action type of update new|update|remove|clear
+ */
+export const updateFavorite = (favorites, product, action) => {
+	if (action === 'new') {
+		return [
+			...favorites,
+			{
+				productID: product.id,
+				quantity: 1
 			}
-			return null;
-		});
-	} else {
-		state.favorites.push({
-			// add new
-			productID: action.product.id,
-			quantity: 1
+		];
+	}
+	if (action === 'clear') {
+		return favorites.filter(f => f.productID !== product.id);
+	}
+
+	if (action === 'update') {
+		return favorites.filter(f => {
+			if (f.productID === product.id) {
+				f.quantity += 1;
+			}
+			return f;
 		});
 	}
 
-	updateLocalStorage(state.favorites);
-
-	return {
-		...state,
-		favorites: state.favorites
-	};
-};
-
-export const loadFavoritesFromStorage = (state, action) => {
-	const loadedFavorites = getLocalStorage();
-
-	return {
-		...state,
-		favorites: loadedFavorites
-	};
-};
-
-export const removeFavorite = (state, action) => {
-	const newFavorites = state.favorites.filter(f => {
-		if (f.productID === action.product.id) {
-			if (f.quantity - 1 > 0) {
-				f.quantity = f.quantity === 0 ? 0 : f.quantity - 1;
-				return f;
+	if (action === 'remove') {
+		return favorites.filter(f => {
+			if (f.productID === product.id) {
+				if (f.quantity - 1 > 0) {
+					f.quantity = f.quantity === 0 ? 0 : f.quantity - 1;
+					return f;
+				} else {
+					return null;
+				}
 			} else {
-				return null;
+				return f;
 			}
-		} else {
-			return f;
-		}
-	});
-
-	//updateLocalStorage(newFavorites);
-
-	return {
-		...state,
-		favorites: newFavorites
-	};
-};
-
-export const clearFavorite = (state, action) => {
-	const newFavorites = state.favorites.filter(f => f.productID !== action.product.id);
-	updateLocalStorage(newFavorites);
-	return {
-		...state,
-		favorites: newFavorites
-	};
-};
-
-const updateLocalStorage = favorites => {
-	localStorage.setItem('ProductCatalog-Favorites', JSON.stringify(favorites));
-};
-const getLocalStorage = favorites => {
-	return JSON.parse(localStorage.getItem('ProductCatalog-Favorites')) || [];
+		});
+	}
 };

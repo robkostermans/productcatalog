@@ -1,15 +1,12 @@
 import React from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
-
 import { StateProvider } from '../state';
-
-import { Header, Catalog, FavoritesButton, Favorites } from './';
-
 import theme from './themes/default';
 import { reducer } from '../helpers';
+import { Header, Catalog, FavoritesButton, Favorites } from './';
 
 const GlobalStyle = createGlobalStyle`
- 	@import url('https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat|Roboto+Slab&display=swap');
+ 	@import url('https://fonts.googleapis.com/css?family=Kaushan+Script|Roboto+Slab&display=swap');
 	body {
 		margin:0;
 		font-size:16px;
@@ -18,12 +15,6 @@ const GlobalStyle = createGlobalStyle`
 		overflow-x: hidden;
 		font-family: 'Roboto Slab', serif;
 	}
-
-	h1,h2,h3,h4,h5,h6 {
-		font-weight: 700;
-		font-family: 'Montserrat', sans-serif;
-		}
-
 `;
 
 const App = ({ config }) => {

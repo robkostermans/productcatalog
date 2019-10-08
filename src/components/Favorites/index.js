@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
-
 import { useStateContext } from '../../state';
+import { getLocalStorage, updateLocalStorage } from '../../helpers';
 import { Favorite } from '..';
 
 const S = {};
+
 const slide = keyframes`
   from {
     transform: translateX(350px);
@@ -64,8 +65,13 @@ const Favorites = props => {
 	const [{ favorites, modal }, dispatch] = useStateContext();
 
 	useEffect(() => {
-		dispatch({ type: 'loadFavoritesFromStorage' });
+		const favoritesFromStorage = getLocalStorage();
+		dispatch({ type: 'loadFavorites', favorites: favoritesFromStorage });
 	}, [dispatch]);
+
+	useEffect(() => {
+		updateLocalStorage(favorites);
+	}, [favorites]);
 
 	return (
 		<>

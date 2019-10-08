@@ -4,7 +4,13 @@ import { FavoritesButton } from '../';
 
 const S = {};
 
-S.Header = styled.header``;
+S.Header = styled.header`
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	height: 85vh;
+	justify-content: center;
+`;
 
 S.Title = styled.h1`
 	color: ${props => props.theme.colors.primary};
@@ -19,7 +25,9 @@ S.SubTitle = styled.h2`
 	font-family: 'Kaushan Script', cursive;
 	font-size: 1.25rem;
 	margin: 1rem;
-	line-height: 1;
+	max-width: 400px;
+	line-height: 2.35rem;
+	text-align: center;
 `;
 
 //SET DEDaAULTS
@@ -37,7 +45,7 @@ const Header = props => {
 	return (
 		<S.Header>
 			<S.Title>Robot Shop</S.Title>
-			<S.SubTitle>Get your robot now ... just in case!</S.SubTitle>
+			<S.SubTitle>Get your robot now; automate your home, do some gardening, build your army and take over the world... whatever you want! Get your robots now!</S.SubTitle>
 		</S.Header>
 	);
 };

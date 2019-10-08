@@ -1,16 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useStateContext } from '../../state';
 
 const S = {};
 
 S.FavoritesButton = styled.button`
+	align-items: center;
 	background: transparent;
 	border: 0;
 	cursor: pointer;
+	display: flex;
+	justify-content: center;
 	outline: 0;
 	position: fixed;
 	right: 1rem;
 	top: 1rem;
+	z-index: 600;
 `;
 
 S.Icon = styled.svg`
@@ -18,18 +23,24 @@ S.Icon = styled.svg`
 	width: 50px;
 `;
 
-//SET DEDaAULTS
-S.FavoritesButton.defaultProps = {
-	theme: {
-		colors: {
-			primary: 'palevioletred'
-		}
-	}
-};
+S.Badge = styled.div`
+	color: ${props => props.theme.colors.primary};
+	font-size: 1rem;
+	font-weight: bold;
+	position: absolute;
+`;
 
 const FavoritesButton = props => {
+	const [{ modal, favorites }, dispatch] = useStateContext();
+
+	// TODO create function
+	const totalNumberOfFavorites = favorites.reduce(function(accumulator, currentValue) {
+		return accumulator + currentValue.quantity;
+	}, 0);
+
 	return (
-		<S.FavoritesButton onClick>
+		<S.FavoritesButton onClick={() => dispatch({ type: 'showFavorites', status: !modal })}>
+			<S.Badge>{totalNumberOfFavorites}</S.Badge>
 			<S.Icon x='0px' y='0px' viewBox='0 0 510 510'>
 				<g>
 					<g id='favorite-outline'>

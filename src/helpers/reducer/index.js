@@ -6,13 +6,19 @@ export const reducer = (state, action) => {
 			return addFavorite(state, action);
 		case 'removeFavorite':
 			return removeFavorite(state, action);
+		case 'showFavorites':
+			return {
+				...state,
+				modal: action.status
+			};
+		case 'loadFavoritesFromStorage':
+			return loadFavoritesFromStorage(state, action);
 		case 'loadProducts':
 			return {
 				...state,
 				products: action.products
 			};
-		case 'loadFavoritesFromStorage':
-			return loadFavoritesFromStorage(state, action);
+
 		default:
 			return state;
 	}

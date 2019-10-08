@@ -7,8 +7,12 @@ import { useStateContext } from '../../state';
 
 const S = {};
 S.Catalog = styled.ul`
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 	list-style: none;
-	margin: 0;
+	margin: auto;
+	max-width: 1140px;
 	padding: 1rem;
 `;
 

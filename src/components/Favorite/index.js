@@ -48,7 +48,7 @@ const Favorite = props => {
 		let product = products.filter(p => p.id === props.productID);
 		product = product.length === 1 ? product[0] : {};
 		setProduct(product);
-	}, []);
+	}, [products, props.productID]);
 
 	const handleUpdateFavorites = (product, value) => {
 		const actionType = value === -1 ? 'remove' : 'update';

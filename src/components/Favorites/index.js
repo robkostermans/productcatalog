@@ -74,7 +74,7 @@ const Favorites = props => {
 	}, [favorites]);
 
 	return (
-		<>
+		<React.Fragment>
 			{modal && (
 				<S.Modal>
 					<S.Favorites>
@@ -85,7 +85,7 @@ const Favorites = props => {
 					</S.Favorites>
 				</S.Modal>
 			)}
-		</>
+		</React.Fragment>
 	);
 };
 
